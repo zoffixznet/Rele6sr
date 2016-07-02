@@ -1,0 +1,21 @@
+% layout 'default';
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      % if ( $step->is_completed ) {
+        <a href="/step/<%= $step->url %>/uncomplete"
+          class="btn btn-sm btn-danger"
+        >Uncomplete</a>
+      % } else {
+        <a href="/step/<%= $step->url %>/complete"
+          class="btn btn-sm btn-success"
+        >Complete</a>
+      % }
+      Step View: <%= $step->menu %>
+    </h2>
+  </div>
+  <div class="panel-body">
+    <%= $step->content %>
+  </div>
+</div>

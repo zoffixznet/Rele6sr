@@ -1,0 +1,15 @@
+{
+    "perl"         : "6.c",
+    "name"         : "Rele6sr",
+    "version"      : "1.001001",
+    "description"  : "Rakudo Perl 6 Compiler Release Tool",
+    "depends"      : [
+        "Inline::Perl5",
+        "File::Find",
+        "DBIish"
+    ],
+    "test-depends" : [ ],
+    "provides"     : {},
+    "authors"      : [ "Zoffix Znet" ],
+    "support"      : {"source"   : "git://github.com/zoffixznet/Rele6sr.git"}
+}

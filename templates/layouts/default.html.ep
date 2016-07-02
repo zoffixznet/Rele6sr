@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rele6sr</title>
+  <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+  crossorigin="anonymous">
+
+  <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+  integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+  crossorigin="anonymous">
+
+  %= asset "app.css"
+
+</head>
+<body>
+<div class="container">
+  <h1>Rele6sr</h1>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title">Steps</h2>
+        </div>
+        <div class="panel-body" id="steps">
+          % for my $step ( r6->steps_ordered ) {
+            <a href="/step/<%= $step->url %>/view"
+                class="btn btn-block <%=
+                  $step->is_completed ? 'btn-success' : 'btn-default'
+                %>"
+              ><%= $step->menu %></a>
+          % }
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <%= content %>
+    </div>
+  </div>
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+  integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+  crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.0.0.min.js"
+  integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+  crossorigin="anonymous"></script>
+
+  %= asset "app.js"
+
+</body>
+</html>

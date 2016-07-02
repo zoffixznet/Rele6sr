@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "#################################################################"
+echo "Ensure we have Perl 5 with proper flags installed. Get such with:"
+echo "    perlbrew install perl-5.24.0 -Duseshrplib -Dusemultiplicity"
+echo "#################################################################"
+sleep 2
+zef --depsonly .
+cpanm -vn   Mojolicious                                                     \
+            Mojolicious::Plugin::AssetPack                                  \
+            CSS::Minifier::XS                                               \
+            CSS::Sass                                                       \
+            JavaScript::Minifier::XS                                        \
+            RT::Client::REST                                                \
