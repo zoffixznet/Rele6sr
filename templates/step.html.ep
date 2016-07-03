@@ -15,7 +15,12 @@
       <%= $step->menu %>
     </h2>
   </div>
-  <div class="panel-body">
-    <%== $step->content %>
+  <div class="panel-body step-<%= $step->url %>">
+    % my $panel = { $step->content };
+    % if ( exists $panel->{content} ) {
+      <%== $panel->{content} %>
+    % } else {
+      %= include 'steps/' . $panel->{template}, %{ $panel->{args} || {} };
+    % }
   </div>
 </div>

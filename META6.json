@@ -6,7 +6,10 @@
     "depends"      : [
         "Inline::Perl5",
         "File::Find",
-        "DBIish"
+        "DBIish",
+        "HTTP::UserAgent",
+        "URI::Escape",
+        "IO::Socket::SSL"
     ],
     "test-depends" : [ ],
     "provides"     : {},

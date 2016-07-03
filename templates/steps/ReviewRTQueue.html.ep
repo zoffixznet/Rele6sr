@@ -1,0 +1,21 @@
+
+<p>New open tickets since last release:</p>
+
+<div class="table-responsive">
+  <table class="table table-condensed" id="ReviewRTQueue_tickets_table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Subject</th>
+    </tr>
+  </thead>
+  <tbody>
+    % for my $t ( @$tickets ) {
+      <tr>
+        <td><a href="<%= $t->url %>">#<%= $t->id %></a></td>
+        <td><small><%= $t->tags %></small> <%= $t->subject %></td>
+      </tr>
+    % }
+  </tbody>
+  </table>
+</div>

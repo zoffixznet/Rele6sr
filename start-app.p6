@@ -1,6 +1,12 @@
 #!/usr/bin/env perl6
 use File::Find;
 
+constant $IGNORE_RE = rx{
+      [   '/'? '.precomp' [ '/' | $ ]   ]
+    | [   ^ 'assets/assetpack.db' $    ]
+    | [   ^ 'assets/cache/'            ]
+};
+
 sub MAIN (
     Str $app = 'bin/app.p6',
     Str :$w = 'lib,bin,templates,public,assets'
@@ -34,7 +40,7 @@ my sub bootup-app ($app) {
 my sub watch-recursive(@dirs) {
     supply {
         my sub watch-it($p) {
-	        if ( $p ~~ rx{ '/'? '.precomp' [ '/' | $ ] } ) {
+	        if ( $p ~~ $IGNORE_RE ) {
                 say "Skipping .precomp dir [$p]";
                 return;
             }
