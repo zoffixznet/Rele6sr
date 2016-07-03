@@ -9,3 +9,13 @@
         margin-right: 10px;
     }
 }
+
+.panel-body {
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+#steps .text-left {
+    text-align: left!important;
+}

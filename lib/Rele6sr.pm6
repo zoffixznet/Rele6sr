@@ -6,9 +6,11 @@ use Rele6sr::Step::SendReleaseReminders;
 has %.steps;
 has $.db;
 
-submethod BUILD (:@steps) {
-    for @steps.kv -> $idx, $step {
+submethod BUILD (:$config) {
+    say $config;
+    for $config<steps>.kv -> $idx, $step {
         my $step-module = "Rele6sr::Step::$step";
+        say $step-module;
         require ::($step-module);
 
         $!db = Rele6sr::DB.new.connect;
@@ -16,7 +18,7 @@ submethod BUILD (:@steps) {
         %!steps{.url} = %(
             step => $_,
             sort => $idx,
-        ) given ::($step-module).new: :$!db;
+        ) given ::($step-module).new: :$!db, :$config;
     }
 }
 

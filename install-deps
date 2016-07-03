@@ -11,3 +11,8 @@ cpanm -vn   Mojolicious                                                     \
             CSS::Sass                                                       \
             JavaScript::Minifier::XS                                        \
             RT::Client::REST                                                \
+            Time::y2038                                                     \
+            LWP::Simple                                                     \
+            LWP::Protocol::https                                            \
+            File::Slurp                                                     \
+            Text::MultiMarkdown                                             \

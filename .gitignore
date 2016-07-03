@@ -1,4 +1,5 @@
 release.db
 assets/assetpack.db
 assets/cache
+secret.txt
 **/.precomp

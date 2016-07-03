@@ -12,7 +12,10 @@ app.asset.process: 'app.js'  => <js/main.js>;
 
 helper r6 => &helper-r6;
 
-get '/', *.stash: :template<index>;
+get '/', {
+    $^c.stash: :template<index>, :step($^c.r6.steps_ordered[0]);
+}, 'index';
+
 under '/step/:name' => {
     $^c.stash:
         template  => 'step',
@@ -25,5 +28,5 @@ get '/uncomplete', *.stash('step').uncomplete;
 app.start;
 
 sub helper-r6 {
-    state $r6 = Rele6sr.new: :steps(|$^c.config<steps>);
+    state $r6 = Rele6sr.new: :config($^c.config);
 }

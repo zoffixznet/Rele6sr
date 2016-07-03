@@ -30,12 +30,17 @@
           <h2 class="panel-title">Steps</h2>
         </div>
         <div class="panel-body" id="steps">
-          % for my $step ( r6->steps_ordered ) {
-            <a href="/step/<%= $step->url %>/view"
-                class="btn btn-block <%=
-                  $step->is_completed ? 'btn-success' : 'btn-default'
+          % my $num = 1;
+          % for my $step_item ( r6->steps_ordered ) {
+            <a href="/step/<%= $step_item->url %>/view"
+                class="btn btn-block text-left <%=
+                  $step->url eq $step_item->url
+                    ? 'btn-primary'
+                    : $step_item->is_completed
+                      ? 'btn-success'
+                      : 'btn-default'
                 %>"
-              ><%= $step->menu %></a>
+              ><b><%= $num++ %>.</b> <%= $step_item->menu %></a>
           % }
         </div>
       </div>
