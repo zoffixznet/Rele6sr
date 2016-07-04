@@ -4,7 +4,7 @@ echo "Ensure we have Perl 5 with proper flags installed. Get such with:"
 echo "    perlbrew install perl-5.24.0 -Duseshrplib -Dusemultiplicity"
 echo "#################################################################"
 sleep 2
-zef --depsonly .
+zef --depsonly install .
 cpanm -vn   Mojolicious                                                     \
             Mojolicious::Plugin::AssetPack                                  \
             CSS::Minifier::XS                                               \
