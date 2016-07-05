@@ -3,6 +3,7 @@ unit class Rele6sr;
 use Rele6sr::DB;
 use Rele6sr::RT;
 use Rele6sr::Step;
+use Rele6sr::Shell;
 
 has %.steps;
 has $.db;
