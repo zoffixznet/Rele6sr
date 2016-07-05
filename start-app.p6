@@ -49,7 +49,7 @@ my sub watch-recursive(@dirs) {
                 if $e.event ~~ FileRenamed && $e.path.IO ~~ :d {
                     watch-it($_) for find-dirs $e.path;
                 }
-                emit($e);
+                emit($e) unless $e.path ~~ $IGNORE_RE;
             }
         }
         watch-it(~$_) for |@dirs.map: { find-dirs $_ };

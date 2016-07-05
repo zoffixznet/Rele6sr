@@ -1,3 +1,7 @@
+a {
+    outline: 0!important;
+}
+
 .panel-title {
     padding-top: 3px;
 
@@ -21,5 +25,24 @@
 }
 
 .step-RT-Review-RT-Queue {
+    .table  {
+        td {
+            vertical-align: middle;
+        }
 
+        .actions {
+            white-space: nowrap;
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 2000px;
+}
+
+pre.console {
+    background: #000;
+    color: #AAA;
+    font-family: monospace;
 }

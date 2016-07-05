@@ -24,7 +24,7 @@
   <h1>Rele6sr</h1>
 
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h2 class="panel-title">Steps</h2>
@@ -45,18 +45,16 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-8">
-      <%= content %>
-    </div>
+    <%= content %>
   </div>
 </div>
 
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
   integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-  crossorigin="anonymous"></script>
-<script
-  src="https://code.jquery.com/jquery-3.0.0.min.js"
-  integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
   crossorigin="anonymous"></script>
 
   %= asset "app.js"

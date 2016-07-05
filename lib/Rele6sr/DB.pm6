@@ -27,6 +27,7 @@ method mark-completed (Str $name) {
     $!dbh.do:
         'INSERT INTO completed (name, is_completed) VALUES (?, ?)',
         $name, True;
+    True;
 }
 
 method unmark-completed (Str $name) {
@@ -34,6 +35,7 @@ method unmark-completed (Str $name) {
     $!dbh.do:
         'INSERT INTO completed (name, is_completed) VALUES (?, ?)',
         $name, False;
+    True;
 }
 
 method !dbh-select-one (|c) {

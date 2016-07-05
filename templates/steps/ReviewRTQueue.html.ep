@@ -1,19 +1,37 @@
 
-<p>New open tickets since last release:</p>
+<p>New open tickets since last release:
+  <strong>Legend:</strong>
+  <a href="#" class="ticket-ok btn btn-xs btn-success"
+    ><i class="glyphicon glyphicon-ok"></i></a>&mdash;ticket reviewed
+  <a href="#" class="ticket-block btn btn-xs btn-danger"
+    ><i class="glyphicon glyphicon-alert"></i></a>&mdash;ticket is blocking the release
+</p>
 
 <div class="table-responsive">
-  <table class="table table-condensed" id="ReviewRTQueue_tickets_table">
+  <table class="table table-condensed">
   <thead>
     <tr>
       <th>ID</th>
       <th>Subject</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
     % for my $t ( @$tickets ) {
-      <tr>
+      % my $is_block = is_marked('RT-ticket-' . $t->id . '-block');
+      % my $is_ok    = is_marked('RT-ticket-' . $t->id . '-ok');
+      <tr class="<%= $is_block ? 'danger'  : '' %>
+                 <%= $is_ok    ? 'success' : '' %>">
         <td><a href="<%= $t->url %>">#<%= $t->id %></a></td>
         <td><small><%= $t->tags %></small> <%= $t->subject %></td>
+        <td class="actions">
+          <a href="/toggle-mark/RT-ticket-<%= $t->id %>-ok"
+              class="ticket-ok btn btn-xs btn-<%= bt $is_ok, 'success' %>"
+            ><i class="glyphicon glyphicon-ok"></i></a>
+          <a href="/toggle-mark/RT-ticket-<%= $t->id %>-block"
+              class="ticket-block btn btn-xs btn-<%= bt $is_block, 'danger' %>"
+            ><i class="glyphicon glyphicon-alert"></i></a>
+        </td>
       </tr>
     % }
   </tbody>
