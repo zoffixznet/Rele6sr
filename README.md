@@ -21,7 +21,7 @@ install, run:
     echo 'export PATH=~/.rakudobrew/bin:~/.rakudobrew/moar-nom/install/share/perl6/site/bin:$PATH' >> ~/.bashrc
     source ~/.bashrc
     perlbrew install perl-stable -Duseshrplib -Dusemultiplicity
-    perlbrew switch perl-stable
+    perlbrew switch perl-stable # replace perl-stable which version installed in the above step
     perlbrew install-cpanm
     rakudobrew build moar
     rakudobrew build zef
