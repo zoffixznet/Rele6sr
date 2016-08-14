@@ -32,54 +32,7 @@
       <h2 class="panel-title">Console</h2>
     </div>
     <div class="panel-body">
-      <pre class="console">zoffix@VirtualBox:~/CPANPRC/Rele6sr$ gitc 'RT Queue done'
-[master d217bc2] RT Queue done
- 36 files changed, 518 insertions(+), 407 deletions(-)
- create mode 100644 lib/Rele6sr/RT.pm6
- delete mode 100644 lib/Rele6sr/Step/AnnounceRelease.pm6
- delete mode 100644 lib/Rele6sr/Step/Celebrate.pm6
- delete mode 100644 lib/Rele6sr/Step/CheckCopyright.pm6
- delete mode 100644 lib/Rele6sr/Step/CheckDeprecated.pm6
- delete mode 100644 lib/Rele6sr/Step/CompileAndRunFromClean.pm6
- delete mode 100644 lib/Rele6sr/Step/GitPush.pm6
- delete mode 100644 lib/Rele6sr/Step/InlinePerl5.pm6
- delete mode 100644 lib/Rele6sr/Step/MakeReleaseAnnouncement.pm6
- delete mode 100644 lib/Rele6sr/Step/MoarVMRelease.pm6
- delete mode 100644 lib/Rele6sr/Step/NQPRelease.pm6
- delete mode 100644 lib/Rele6sr/Step/ReleaseTarball.pm6
- delete mode 100644 lib/Rele6sr/Step/ReviewGitLog.pm6
- delete mode 100644 lib/Rele6sr/Step/ReviewRTQueue.pm6
- delete mode 100644 lib/Rele6sr/Step/SendReleaseReminders.pm6
- delete mode 100644 lib/Rele6sr/Step/SignTarball.pm6
- delete mode 100644 lib/Rele6sr/Step/StresstestMaster.pm6
- delete mode 100644 lib/Rele6sr/Step/StresstestStable.pm6
- delete mode 100644 lib/Rele6sr/Step/TagRelease.pm6
- delete mode 100644 lib/Rele6sr/Step/TestTarball.pm6
- delete mode 100644 lib/Rele6sr/Step/UpdateLeapSeconds.pm6
- delete mode 100644 lib/Rele6sr/Step/UpdateNQPDependency.pm6
- delete mode 100644 lib/Rele6sr/Step/UpdateReleaseGuide.pm6
- delete mode 100644 lib/Rele6sr/Step/UpdateVERSION.pm6
- delete mode 100644 lib/Rele6sr/Step/UpdateWikipedia.pm6
- delete mode 100644 lib/Rele6sr/Step/UploadTarball.pm6
- delete mode 100644 lib/Rele6sr/StepBase/Base.pm6
- delete mode 100644 lib/Rele6sr/StepBase/Instructions.pm6
- delete mode 100644 lib/Rele6sr/StepBase/RT.pm6
- create mode 100644 templates/steps/ReviewRTQueue.html.ep
-zoffix@VirtualBox:~/CPANPRC/Rele6sr$ gs
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working directory clean
-zoffix@VirtualBox:~/CPANPRC/Rele6sr$ gp
-Counting objects: 28, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (14/14), done.
-Writing objects: 100% (16/16), 6.48 KiB | 0 bytes/s, done.
-Total 16 (delta 6), reused 0 (delta 0)
-To https://github.com/zoffixznet/Rele6sr.git
-   10529d2..d217bc2  master -> master
-zoffix@VirtualBox:~/CPANPRC/Rele6sr$
+      <pre class="console">
       </pre>
     </div>
   </div>

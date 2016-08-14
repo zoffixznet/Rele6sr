@@ -32,7 +32,7 @@ class Base::Instructions is Base {
     has Str:D $.instructions = 'N/A';
 
     method content {
-        [ content => markdown $.instructions ];
+        [ 'content', markdown $.instructions ];
     }
 }
 
@@ -156,7 +156,9 @@ class MakeReleaseAnnouncement is Base::Instructions {
         will create a basic release announcement for you based on the state
         of the repository and the current date. Feel free to use it to save
         yourself some time, but please look over its output if you decide to
-        use it.
+        use it:
+        
+            ./perl6 tools/create-release-announcement.pl > docs/announce/2016.07.md
 
         Highlight areas in which the new release is significant.
 
@@ -352,8 +354,9 @@ class UpdateLeapSeconds is Base::Instructions {
 
             perl tools/update-tai-utc.pl
 
-        If a new leap second has been announced, tai-utc.pm will be modified,
-        so commit the new version:
+        If a new leap second has been announced, `src/core/Rakudo/Internals.pm`
+        will be modified, so commit the new version. **Note:** be sure to double
+        check the modifications are correct before committing.
 
             git commit src
 

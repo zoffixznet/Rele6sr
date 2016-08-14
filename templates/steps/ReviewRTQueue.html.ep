@@ -22,7 +22,7 @@
       % my $is_ok    = is_marked('RT-ticket-' . $t->id . '-ok');
       <tr class="<%= $is_block ? 'danger'  : '' %>
                  <%= $is_ok    ? 'success' : '' %>">
-        <td><a href="<%= $t->url %>">#<%= $t->id %></a></td>
+        <td><a href="<%= $t->url %>" target="_blank">#<%= $t->id %></a></td>
         <td><small><%= $t->tags %></small> <%= $t->subject %></td>
         <td class="actions">
           <a href="/toggle-mark/RT-ticket-<%= $t->id %>-ok"
