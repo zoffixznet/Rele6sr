@@ -31,7 +31,7 @@ multi method irc-addressed (
         ~ " with anything you worked on that should be known to our users. 🎺🎺🎺";
 
     $.irc.send: :where($e.channel), text =>
-        "🎺🎺🎺 Here are still-open new RT tickets since last release: $tickets"
+        "🎺🎺🎺 Here are new RT tickets since last release: $tickets"
         ~ " And here is the git log output for commits since last"
         ~ " release: $gitlog 🎺🎺🎺";
 }
