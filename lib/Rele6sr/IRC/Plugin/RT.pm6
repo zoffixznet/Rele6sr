@@ -1,5 +1,5 @@
 use IRC::Client;
-unit class Rele6sr::IRC::Plugin::RT;
+unit class Rele6sr::IRC::Plugin::RT does IRC::Client::Plugin;
 use HTML::Entity;
 use RT::REST::Client;
 
@@ -15,8 +15,8 @@ submethod BUILD (:$!report-dir, :$user, :$pass) {
     $!rt = RT::REST::Client.new: :$user, :$pass;
 }
 
-multi method irc-to-me (
-    $e where /:i ^ 'reminder' $ /
+multi method irc-addressed (
+    $e where /:i ^ \s* 'reminder' \s* $ /
     # {
         # .text ~~ /:i ^ 'reminder' $ /
         # and ( $e.host eq 'unaffiliated/zoffix' or $e.host eq '127.0.0.1' )
@@ -25,12 +25,13 @@ multi method irc-to-me (
     my $tickets = self!tickets-link;
     my $gitlog  = self!gitlog-link;
 
-    "🎺🎺🎺 Friends! I bear good news! Rakudo's release will happen in"
-    ~ " just {$release-date - Date.today} days! Please update the ChangeLog"
-    ~ " with anything you worked on that should be known to our users."
-    ~ " Here are still-open new RT tickets since last release: $tickets"
-    ~ " And here is the git log output for commits since last"
-    ~ " release: $gitlog 🎺🎺🎺";
+    $.irc.send: :where($e.channel), text =>
+        "🎺🎺🎺 Friends! I bear good news! Rakudo's release will happen in"
+        ~ " just {$release-date - Date.today} days! Please update the ChangeLog"
+        ~ " with anything you worked on that should be known to our users."
+        ~ " Here are still-open new RT tickets since last release: $tickets"
+        ~ " And here is the git log output for commits since last"
+        ~ " release: $gitlog 🎺🎺🎺";
 }
 
 method !tickets-link {
