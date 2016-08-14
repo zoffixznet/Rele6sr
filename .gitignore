@@ -2,4 +2,5 @@ release.db
 assets/assetpack.db
 assets/cache
 secret.txt
+config.json
 **/.precomp
