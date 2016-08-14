@@ -149,7 +149,7 @@ method !save-to-file ($out) {
 sub get-css {
     return Q:to/CSS/;
         body {
-            width: 1200px;
+            width: 1400px;
             margin: 10px auto;
             font: .85em "Trebuchet MS", Arial, Helvetica, sans-serif;
             color: #444;
@@ -178,7 +178,7 @@ sub get-css {
             padding-left: 0;
             list-style: none;
             float: left;
-            width: 600px;
+            width: 700px;
             height: 800px;
             overflow-y: scroll;
             margin-right: 40px;
@@ -198,7 +198,7 @@ sub get-css {
         #changelog {
             overflow-y: scroll;
             height: 800px;
-            width: 560px;
+            width: 660px;
             float: left;
             background: #fafafa;
             padding: 20px;
