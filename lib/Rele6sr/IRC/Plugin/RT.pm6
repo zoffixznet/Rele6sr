@@ -28,8 +28,10 @@ multi method irc-addressed (
     $.irc.send: :where($e.channel), text =>
         "🎺🎺🎺 Friends! I bear good news! Rakudo's release will happen in"
         ~ " just {$release-date - Date.today} days! Please update the ChangeLog"
-        ~ " with anything you worked on that should be known to our users."
-        ~ " Here are still-open new RT tickets since last release: $tickets"
+        ~ " with anything you worked on that should be known to our users. 🎺🎺🎺";
+
+    $.irc.send: :where($e.channel), text =>
+        "🎺🎺🎺 Here are still-open new RT tickets since last release: $tickets"
         ~ " And here is the git log output for commits since last"
         ~ " release: $gitlog 🎺🎺🎺";
 }
@@ -147,7 +149,7 @@ method !save-to-file ($out) {
 sub get-css {
     return Q:to/CSS/;
         body {
-            max-width: 1400px;
+            width: 1200px;
             margin: 10px auto;
             font: .85em "Trebuchet MS", Arial, Helvetica, sans-serif;
             color: #444;
@@ -176,7 +178,9 @@ sub get-css {
             padding-left: 0;
             list-style: none;
             float: left;
-            width: 800px;
+            width: 600px;
+            height: 800px;
+            overflow-y: scroll;
             margin-right: 40px;
         }
         #commits-list .header { color: #888; }
@@ -192,10 +196,10 @@ sub get-css {
         }
 
         #changelog {
-            position: fixed;
             overflow-y: scroll;
-            height: 600px;
-            width: 600px;
+            height: 800px;
+            width: 560px;
+            float: left;
             background: #fafafa;
             padding: 20px;
             border: 1px solid #eee;
